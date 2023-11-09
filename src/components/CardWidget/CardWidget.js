@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const CardWidget = () => {
+const CardWidget = ({ cartCount }) => {
   return (
-    <div>
-            
+    <div className="card-widget">
+      <Link to="/cart">
+        <img src="../carrito.png" alt="Carrito" />
+        <span className="item-count">{cartCount}</span>
+      </Link>
     </div>
-  )
-}
+  );
+};
 
-export default CardWidget
+export default CardWidget;
+ 

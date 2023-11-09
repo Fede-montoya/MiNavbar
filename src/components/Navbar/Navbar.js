@@ -5,7 +5,10 @@ const Navbar = ({ cartCount }) => {
   const navbarStyle = {
     backgroundColor: 'black',
     color: 'blue',
-    padding: '20px',
+    padding: '18px',
+    fontSize: '24px',
+    
+    
   };
 
   return (
