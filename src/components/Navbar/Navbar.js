@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ cartCount }) => {
   const navbarStyle = {
-    backgroundColor: 'green',
+    backgroundColor: 'black',
     color: 'blue',
-    padding: '6px',
+    padding: '20px',
   };
 
   return (
     <nav style={navbarStyle} className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <Link to="/">OnlySneakers</Link>
+       <li><Link to="/">OnlySneakers</Link>
+       </li>
         <button
           className="navbar-toggler"
           type="button"
@@ -39,24 +40,22 @@ const Navbar = ({ cartCount }) => {
                 Más
               </Link>
               <ul className="dropdown-menu">
-                <li className="nav-item">
-                  <Link className="nav-link" to='/category/1'>life style</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to='/category/2'>casuales</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to='/category/3'>deportivas</Link>
-                </li>
-                <li><Link to="/carrito">Carrito</Link></li>
-                <li><Link className="dropdown-item" to='/Contacto'>Contacto</Link></li>
-                <li><Link className="dropdown-item" to='/Informacion'>Información</Link></li>
+
+            
+                
+              <li><Link className="dropdown-item" to='/category/Life-Style'>Life-Style</Link></li>
+
+
+              <li><Link className="dropdown-item" to='/category/Casuales'>Casuales</Link></li>
+              
+              
+              <li><Link className="dropdown-item" to='/category/Deportivas'>Deportivas</Link></li>
               </ul>
             </li>
           </ul>
         </div>
         <span className="cart-icon">
-          <img src="/carrito.png" alt="Carrito" />
+         <img src="../carrito.png" alt="Carrito" style={{ width: '32px', height: '32px' }} />
           <span>{cartCount}</span>
         </span>
       </div>
