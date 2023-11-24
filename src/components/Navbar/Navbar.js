@@ -1,9 +1,12 @@
-import React from 'react';
+import React from 'react'
+import CartWidget from '../CardWidget/CardWidget'
+import './Navbar.css';
 import { Link } from 'react-router-dom';
+
 
 const Navbar = ({ cartCount }) => {
   const navbarStyle = {
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     color: 'blue',
     padding: '18px',
     fontSize: '24px',
@@ -14,8 +17,11 @@ const Navbar = ({ cartCount }) => {
   return (
     <nav style={navbarStyle} className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-       <li><Link to="/">OnlySneakers</Link>
-       </li>
+      <li>
+  <Link to="/" style={{ fontSize: '40px', fontWeight: 'normal', color: 'skyblue', textDecoration: 'none' }}>
+    OnlySneakers
+  </Link>
+</li>
         <button
           className="navbar-toggler"
           type="button"
@@ -57,10 +63,9 @@ const Navbar = ({ cartCount }) => {
             </li>
           </ul>
         </div>
-        <span className="cart-icon">
-         <img src="../carrito.png" alt="Carrito" style={{ width: '32px', height: '32px' }} />
-          <span>{cartCount}</span>
-        </span>
+        <Link class="nav-link" to="/cart">
+    <CartWidget class="cart-icon" />
+  </Link>
       </div>
     </nav>
   );

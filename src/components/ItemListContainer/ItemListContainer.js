@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import Productos from '../Json/products.json'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { useCartContext } from '../CartContext/CartContext';
+
 
 const ItemListContainer = () => {
 
