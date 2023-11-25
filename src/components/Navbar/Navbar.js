@@ -63,8 +63,8 @@ const Navbar = ({ cartCount }) => {
             </li>
           </ul>
         </div>
-        <Link class="nav-link" to="/cart">
-    <CartWidget class="cart-icon" />
+        <Link className="nav-link" to="/cart">
+    <CartWidget className="cart-icon" />
   </Link>
       </div>
     </nav>
