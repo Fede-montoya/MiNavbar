@@ -1,6 +1,6 @@
-MiNavbar
-¡Bienvenido a MiNavbar! Este proyecto es una aplicación web construida con React.js.
- Presenta un ejemplo básico de un Navbar y funcionalidades relacionadas.
+
+Bienvenido a mi tienda creada con react. 
+Descubre la moda única en nuestra tienda de zapatillas exclusivas, creada con React. Explora una colección exclusiva, experimenta una navegación fluida y disfruta de una experiencia de compra moderna y personalizada. Estilo, innovación y comodidad se fusionan en cada par, destacando tu individualidad con cada paso. ¡Bienvenido a la elegancia moderna en cada zancada! 👟✨
 
  Tecnologías Utilizadas
 React.js
