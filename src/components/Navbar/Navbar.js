@@ -64,8 +64,9 @@ const Navbar = ({ cartCount }) => {
           </ul>
         </div>
         <Link className="nav-link" to="/cart">
-    <CartWidget className="cart-icon" />
+    
   </Link>
+  <CartWidget/>
       </div>
     </nav>
   );
