@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Productos from '../Json/products.json'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import { useCartContext } from '../CartContext/CartContext';
+import { getFirestore, collection, getDocs, where, query } from "firebase/firestore";
 
 
 const ItemListContainer = () => {
@@ -11,24 +11,31 @@ const ItemListContainer = () => {
     const [item, setItem]= useState ([]);
     const {id} = useParams();
 
-    useEffect(()=>{
-        const fetchData = async()=>{
-            try{
-                const data = await new Promise ((resolve)=>{
-                    setTimeout(()=>{
-                     resolve( id ? Productos.filter(item=> item.category === id) : Productos)
-                    }, 2000);
-                });
-                setItem(data);
-            }catch(error){
-                console.log('Error', error);
-            }
+    useEffect(() => {
+       
+        const queryDb = getFirestore();
+        const queryCollect = collection(queryDb, 'productos');
+  
+        let queryFilter;
+  
+        if (id) {
+          queryFilter = query(queryCollect, where('categoryId', '==', id));
         }
-
-        fetchData()
-
-    }, [id])
-    
+  
+      const fetchData = async () => {
+        try {
+          const result = id ? await getDocs(queryFilter) : await getDocs(queryCollect);
+          setItem(result.docs.map((p) => ({ id: p.id, ...p.data() })));
+        }catch (error) {
+          console.error("ERROR", error);
+        } 
+        };
+        setTimeout(() => {
+          fetchData();
+        }, 1500);
+  
+      }, [id]);
+  
     
 return (
     <div className='container'>
@@ -40,7 +47,5 @@ return (
     </div>
   )
 }
-
-    
 
 export default ItemListContainer
